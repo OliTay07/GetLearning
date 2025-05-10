@@ -1,0 +1,228 @@
+﻿<Window x:Class="GetLearning.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GetLearning"
+        mc:Ignorable="d"
+        Title="LoginWindow" 
+        Height="700" 
+        Width="600"
+        Background="#8293BA">
+    
+    
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+
+
+            <!-- "*" means that all the rows with a height of * are equal heights -->
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+
+        <!-- Login -->
+        <TextBlock Text="Login"
+   Grid.Row="0"
+   Grid.ColumnSpan="2"
+   HorizontalAlignment="Center"
+   FontSize="40"
+   TextAlignment="Center"
+   VerticalAlignment="Top"
+   Foreground="#324376"
+   ></TextBlock>
+
+
+        <!-- Email -->
+
+        <TextBlock Text="Email Address:" 
+         Grid.Row="2"
+         FontSize="20"
+         TextAlignment="Left"
+         VerticalAlignment="Top"
+         Foreground="#324376" 
+         Grid.ColumnSpan="2" 
+         Margin="25,20,0,0"></TextBlock>
+
+        <TextBox x:Name="tbLoginEmail"
+       Grid.Row="2"
+       Grid.Column="0"
+       Grid.ColumnSpan="2"
+       Margin="10"
+       FontSize="20"
+       Width="550"
+       Height="40"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Bottom" 
+       />
+
+        <!-- Password -->
+        <TextBlock Text="Password:" 
+         Grid.Row="3"
+         FontSize="20"
+         TextAlignment="Left"
+         VerticalAlignment="Top"
+         Foreground="#324376" 
+         Grid.ColumnSpan="2" 
+         Margin="25,20,0,0"></TextBlock>
+
+
+        <TextBox x:Name="tbLoginPassword"
+        Grid.Row="3"
+        Grid.Column="0"
+        Grid.ColumnSpan="2"
+        Margin="10"
+        FontSize="20"
+        Width="550"
+        Height="40"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Bottom" />
+
+
+        <!-- Clear Button -->
+
+        <Button x:Name="btnLoginClear"
+        Width="200"
+        Height="60"
+        Content="Clear"
+        FontSize="25"
+        FontWeight="Bold"
+        Foreground="White"
+        Grid.Row="5"
+        Click="btnLoginClear_Click"
+        >
+
+            <!-- Style the button -->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#324376"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="15"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Trigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="border"
+                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                To="#506FA7"
+                                                Duration="0:0:0.3"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </Trigger.EnterActions>
+                                        <Trigger.ExitActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="border"
+                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                To="#324376"
+                                                Duration="0:0:0.3"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </Trigger.ExitActions>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <!-- Login Button -->
+
+        <Button x:Name="btnLogin"
+        Width="200"
+        Height="60"
+        Content="Login"
+        FontSize="25"
+        FontWeight="Bold"
+        Foreground="White"
+        Grid.Row="5"
+        Grid.Column="2"
+        Click="btnLogin_Click"
+        >
+
+            <!-- Style the button -->
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#324376"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border"
+            Background="{TemplateBinding Background}"
+            CornerRadius="15"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}">
+                                    <ContentPresenter HorizontalAlignment="Center"
+                          VerticalAlignment="Center" />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Trigger.EnterActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="border"
+                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                        To="#506FA7"
+                                        Duration="0:0:0.3"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </Trigger.EnterActions>
+                                        <Trigger.ExitActions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="border"
+                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                        To="#324376"
+                                        Duration="0:0:0.3"/>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </Trigger.ExitActions>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Button.Style>
+        </Button>
+
+
+        <!-- Sign Up Hyperlink -->
+
+        <TextBlock HorizontalAlignment="Center" 
+       Margin="0,10,0,0" 
+       FontSize="14"
+       Grid.Row="7"
+       Grid.ColumnSpan="2"
+       Foreground="White">
+       Don't have an account?
+    <Hyperlink Click="Hyperlink_Click"
+               Foreground="#324376">Sign Up
+    </Hyperlink>
+        </TextBlock>
+
+    </Grid>
+
+</Window>
